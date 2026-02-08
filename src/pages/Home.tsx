@@ -15,12 +15,18 @@ export default function Home({ theme, toggleTheme }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('Barcha savollar')
 
+  console.log('Home render - Selected category:', selectedCategory)
+
   const filteredQuestions = useMemo(() => {
     let filtered = questions
+
+    console.log('Filtering with category:', selectedCategory)
+    console.log('Total questions:', questions.length)
 
     // Category filter
     if (selectedCategory !== 'Barcha savollar') {
       filtered = filtered.filter((q) => q.category === selectedCategory)
+      console.log('After category filter:', filtered.length)
     }
 
     // Search filter
@@ -32,6 +38,7 @@ export default function Home({ theme, toggleTheme }: HomeProps) {
           q.answer.toLowerCase().includes(query) ||
           q.category.toLowerCase().includes(query)
       )
+      console.log('After search filter:', filtered.length)
     }
 
     return filtered
@@ -93,9 +100,12 @@ export default function Home({ theme, toggleTheme }: HomeProps) {
           transition={{ duration: 0.5 }}
           className="text-center mb-6"
         >
-          <p className="text-muted-foreground">
-            <span className="font-bold text-primary text-xl">{filteredQuestions.length}</span>{' '}
+          <p className="text-muted-foreground text-lg">
+            <span className="font-bold text-primary text-2xl">{filteredQuestions.length}</span>{' '}
             ta savol topildi
+          </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            Tanlangan kategoriya: <span className="font-semibold text-primary">{selectedCategory}</span>
           </p>
         </motion.div>
 
