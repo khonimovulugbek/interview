@@ -8,6 +8,8 @@ export interface Question {
 
 export const categories = [
   "Barcha savollar",
+  "Programming Basics (Beginner)",
+  "How Java Works (Intermediate)",
   "Java Fundamentals",
   "OOP",
   "Collections",
@@ -29,9 +31,116 @@ export const categories = [
 ];
 
 export const questions: Question[] = [
-  // Java Fundamentals
+  // Programming Basics (Beginner)
   {
     id: 1,
+    category: "Programming Basics (Beginner)",
+    question: "Dasturlash nima va dasturchi nima qiladi?",
+    answer: "Dasturlash - bu kompyuterga nima qilish kerakligini aytish san'ati. Dasturchi kompyuter tushunadigan tillar (programming languages) yordamida muammolarni hal qilish uchun ko'rsatmalar (instructions) yozadi. Dasturchi muammoni tahlil qiladi, yechim topadi, uni kodga aylantiradi va test qiladi. Dasturchi yangi dasturlar yaratadi, mavjud dasturlarni yaxshilaydi, xatolarni tuzatadi va foydalanuvchilarning ehtiyojlarini qondiradi.",
+    example: "// Oddiy dastur - kompyuterga 'Hello World' yozishni aytish\nSystem.out.println(\"Hello World\");\n\n// Dasturchi bu yerda:\n// 1. Muammoni tushundi: ekranga matn chiqarish kerak\n// 2. Yechim topdi: println metodidan foydalanish\n// 3. Kodni yozdi: System.out.println(...)\n// 4. Natija: 'Hello World' ekranda ko'rinadi"
+  },
+  {
+    id: 2,
+    category: "Programming Basics (Beginner)",
+    question: "Variable (o'zgaruvchi) nima va nima uchun kerak?",
+    answer: "Variable - bu ma'lumotni saqlash uchun nom berilgan joy (container). Xuddi qutiga nom yozib, ichiga biror narsa qo'yish kabi. Variable qiymatni eslab qolish va keyinroq ishlatish uchun kerak. Har bir variable ning: 1) Nomi (identifier) - masalan 'age'. 2) Tipi (type) - qanday ma'lumot saqlashi (int, String va h.k.). 3) Qiymati (value) - hozirgi saqlangan ma'lumot. Variable lar dastur davomida o'zgarishi mumkin (shuning uchun 'o'zgaruvchi').",
+    example: "// Variable yaratish va ishlatish\nint age = 25;           // 'age' nomli o'zgaruvchi, qiymati 25\nString name = \"Ali\";    // 'name' nomli o'zgaruvchi, qiymati \"Ali\"\n\n// Variable ni o'zgartirish\nage = 26;               // Endi age = 26\n\n// Variable dan foydalanish\nSystem.out.println(\"Mening yoshim: \" + age);\nSystem.out.println(\"Mening ismim: \" + name);\n\n// Real hayot misoli:\nint price = 10000;      // Mahsulot narxi\nint quantity = 3;       // Miqdor\nint total = price * quantity;  // Jami: 30000"
+  },
+  {
+    id: 3,
+    category: "Programming Basics (Beginner)",
+    question: "Data type (ma'lumot turi) nima va asosiy turlar qanday?",
+    answer: "Data type - bu qanday turdagi ma'lumot saqlanishini ko'rsatadi. Har xil ma'lumotlar uchun har xil tiplar mavjud. Asosiy turlar: 1) Integer (int) - butun sonlar (-5, 0, 42). 2) Double/Float - o'nlik sonlar (3.14, -2.5). 3) Boolean - true yoki false. 4) Character (char) - bitta harf ('A', 'b'). 5) String - matn ('Hello', 'Java'). Har bir tip qancha joy egallashi va qanday operatsiyalar qilish mumkinligini belgilaydi.",
+    example: "// Har xil data typelar\nint studentCount = 30;        // Butun son\ndouble temperature = 36.6;    // O'nlik son\nboolean isRaining = true;     // Ha/Yo'q (true/false)\nchar grade = 'A';             // Bitta belgi\nString message = \"Salom\";     // Matn\n\n// Nima uchun to'g'ri type tanlash muhim:\nint price = 100;              // To'g'ri - narx butun son\n// String price = \"100\";      // Noto'g'ri - hisoblash qilib bo'lmaydi!\n\n// Type bilan operatsiyalar\nint a = 10;\nint b = 5;\nint sum = a + b;              // 15 - matematika\n\nString firstName = \"Ali\";\nString lastName = \"Valiyev\";\nString fullName = firstName + \" \" + lastName;  // \"Ali Valiyev\" - birlashtirish"
+  },
+  {
+    id: 4,
+    category: "Programming Basics (Beginner)",
+    question: "Operators (operatorlar) nima va qanday turlari bor?",
+    answer: "Operators - bu ma'lumotlar ustida operatsiyalar bajarish uchun belgilar. Asosiy turlari: 1) Arithmetic (arifmetik) - +, -, *, /, % (matematika). 2) Comparison (solishtirish) - ==, !=, >, <, >=, <= (taqqoslash). 3) Logical (mantiqiy) - && (va), || (yoki), ! (emas). 4) Assignment (tayinlash) - = (qiymat berish). 5) Increment/Decrement - ++, -- (oshirish/kamaytirish). Operatorlar ifodalar (expressions) yaratishga yordam beradi.",
+    example: "// Arithmetic operators\nint x = 10 + 5;      // 15 - qo'shish\nint y = 10 - 5;      // 5 - ayirish\nint z = 10 * 5;      // 50 - ko'paytirish\nint w = 10 / 5;      // 2 - bo'lish\nint r = 10 % 3;      // 1 - qoldiq (10 ni 3 ga bo'lganda qoldiq)\n\n// Comparison operators\nboolean isEqual = (5 == 5);        // true\nboolean isNotEqual = (5 != 3);     // true\nboolean isGreater = (10 > 5);      // true\nboolean isLess = (3 < 5);          // true\n\n// Logical operators\nboolean result1 = (5 > 3) && (10 > 8);   // true - ikkisi ham true\nboolean result2 = (5 > 3) || (10 < 8);   // true - kamida bittasi true\nboolean result3 = !(5 > 3);              // false - teskarisi\n\n// Real misol: Magazin\nint price = 50000;\nint discount = 10000;\nint finalPrice = price - discount;   // 40000\nboolean canBuy = finalPrice <= 50000;  // true"
+  },
+  {
+    id: 5,
+    category: "Programming Basics (Beginner)",
+    question: "If statement (shart operatori) qanday ishlaydi?",
+    answer: "If statement - bu shartga qarab qaror qabul qilish mexanizmi. 'Agar ... bo'lsa, ...' mantiqida ishlaydi. Agar shart true bo'lsa, kod bajariladi, aks holda o'tkazib yuboriladi. if-else bilan ikki variant, if-else if-else bilan ko'p variant. Har kuni hayotda qaror qabul qilish kabi: agar yomg'ir yog'sa, soyabon ol, aks holda soyabon kerak emas. Dasturlashda ham xuddi shunday mantiqiy qarorlar qabul qilinadi.",
+    example: "// Oddiy if\nint age = 18;\nif (age >= 18) {\n    System.out.println(\"Siz voyaga yetgansiz\");\n}\n\n// if-else\nint temperature = 30;\nif (temperature > 25) {\n    System.out.println(\"Issiq\");\n} else {\n    System.out.println(\"Sovuq\");\n}\n\n// if-else if-else\nint score = 85;\nif (score >= 90) {\n    System.out.println(\"A'lo\");\n} else if (score >= 70) {\n    System.out.println(\"Yaxshi\");\n} else if (score >= 50) {\n    System.out.println(\"Qoniqarli\");\n} else {\n    System.out.println(\"Qoniqarsiz\");\n}\n\n// Real misol: Avtorizatsiya\nString username = \"ali\";\nString password = \"1234\";\n\nif (username.equals(\"ali\") && password.equals(\"1234\")) {\n    System.out.println(\"Xush kelibsiz!\");\n} else {\n    System.out.println(\"Login yoki parol xato!\");\n}"
+  },
+  {
+    id: 6,
+    category: "Programming Basics (Beginner)",
+    question: "Loop (sikl) nima va nima uchun kerak?",
+    answer: "Loop - bu bir xil yoki o'xshash kodni qayta-qayta bajarish mexanizmi. Kod nusxa ko'chirmasdan bir necha marta bajarish imkonini beradi. 3 xil asosiy loop: 1) for loop - aniq sondagi takrorlash uchun. 2) while loop - shart true bo'lguncha. 3) do-while loop - kamida bir marta bajariladi. Loop siz 1000 marta 'Hello' yozish uchun 1000 qator kod yozish kerak bo'ladi! Loop bu ishni 3 qatorda hal qiladi.",
+    example: "// for loop - aniq necha marta\nfor (int i = 1; i <= 5; i++) {\n    System.out.println(\"Salom \" + i);\n}\n// Natija: Salom 1, Salom 2, ... Salom 5\n\n// while loop - shart bo'yicha\nint count = 0;\nwhile (count < 3) {\n    System.out.println(\"Count: \" + count);\n    count++;\n}\n\n// do-while - kamida 1 marta\nint x = 10;\ndo {\n    System.out.println(\"x = \" + x);\n    x++;\n} while (x < 5);  // Shart false, lekin 1 marta bajarildi\n\n// Real misol: 1 dan 10 gacha yig'indi\nint sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    sum = sum + i;\n}\nSystem.out.println(\"Yig'indi: \" + sum);  // 55\n\n// Real misol: Arraydan o'qish\nString[] names = {\"Ali\", \"Vali\", \"Salim\"};\nfor (int i = 0; i < names.length; i++) {\n    System.out.println(names[i]);\n}"
+  },
+  {
+    id: 7,
+    category: "Programming Basics (Beginner)",
+    question: "Array (massiv) nima va qanday ishlatiladi?",
+    answer: "Array - bu bir xil turdagi bir nechta ma'lumotlarni bitta nomda saqlash. Ro'yxat (list) kabi. Har bir element index (tartib raqam) orqali kirish mumkin. Index 0 dan boshlanadi! Array ning: 1) Fixed size - yaratilganda o'lchami belgilanadi. 2) Same type - barcha elementlar bir xil type. 3) Fast access - index bo'yicha tez kirish (O(1)). Array ko'p ma'lumotlarni tartibli saqlash va ular bilan ishlash uchun juda qulay.",
+    example: "// Array yaratish va ishlatish\nint[] numbers = {10, 20, 30, 40, 50};\n\n// Element olish (index 0 dan boshlanadi!)\nint first = numbers[0];     // 10\nint second = numbers[1];    // 20\nint last = numbers[4];      // 50\n\n// Element o'zgartirish\nnumbers[2] = 35;            // 30 o'rniga 35\n\n// Array uzunligi\nint length = numbers.length;  // 5\n\n// Loop bilan ishlash\nfor (int i = 0; i < numbers.length; i++) {\n    System.out.println(numbers[i]);\n}\n\n// Real misol: Talabalar\nString[] students = new String[3];\nstudents[0] = \"Ali\";\nstudents[1] = \"Vali\";\nstudents[2] = \"Salim\";\n\n// Barcha talabalarni chiqarish\nfor (String student : students) {\n    System.out.println(\"Talaba: \" + student);\n}\n\n// Real misol: Baholar\nint[] grades = {85, 90, 78, 92, 88};\nint sum = 0;\nfor (int grade : grades) {\n    sum += grade;\n}\ndouble average = sum / (double) grades.length;\nSystem.out.println(\"O'rtacha baho: \" + average);"
+  },
+  {
+    id: 8,
+    category: "Programming Basics (Beginner)",
+    question: "Function/Method nima va nima uchun kerak?",
+    answer: "Function (yoki Method) - bu qayta ishlatilishi mumkin bo'lgan kod bloki. Muayyan vazifani bajaradi va nom bilan chaqiriladi. Function: 1) Input olishi mumkin (parameters). 2) Ishni bajaradi. 3) Output qaytarishi mumkin (return value). Function kod takrorlanishini kamaytiradi, kodni tushunarliroq qiladi va qayta ishlatish imkonini beradi. Bir marta yoz, ko'p joyda ishla! DRY principle: Don't Repeat Yourself.",
+    example: "// Oddiy function\npublic static void greet() {\n    System.out.println(\"Salom!\");\n}\n\n// Function chaqirish\ngreet();  // Natija: Salom!\n\n// Parameter li function\npublic static void greetPerson(String name) {\n    System.out.println(\"Salom, \" + name + \"!\");\n}\n\ngreetPerson(\"Ali\");   // Salom, Ali!\ngreetPerson(\"Vali\");  // Salom, Vali!\n\n// Return qiluvchi function\npublic static int add(int a, int b) {\n    return a + b;\n}\n\nint result = add(5, 3);  // 8\n\n// Real misol: Hisoblash\npublic static double calculateTotal(double price, int quantity) {\n    return price * quantity;\n}\n\ndouble total1 = calculateTotal(10.5, 3);   // 31.5\ndouble total2 = calculateTotal(20.0, 2);   // 40.0\n\n// Real misol: Validation\npublic static boolean isValidAge(int age) {\n    return age >= 18 && age <= 100;\n}\n\nif (isValidAge(25)) {\n    System.out.println(\"Yosh to'g'ri\");\n}"
+  },
+  {
+    id: 9,
+    category: "Programming Basics (Beginner)",
+    question: "Input va Output nima?",
+    answer: "Input - bu dasturga tashqaridan kelgan ma'lumot (user dan, file dan, network dan). Output - bu dastur tomonidan chiqariladigan ma'lumot (ekranga, file ga, network ga). Input/Output (I/O) - dasturning tashqi dunyo bilan muloqoti. Dastur: Input oladi → Process qiladi → Output beradi. Misol: Calculator dasturi - siz sonlarni kiritasiz (input), dastur hisoblaydi (process), natijani ko'rsatadi (output).",
+    example: "// Output - ekranga chiqarish\nSystem.out.println(\"Salom!\");           // Yangi qatorga\nSystem.out.print(\"Java\");               // Bir qatorda\nSystem.out.println(\" Programming\");     // Davomi\n\n// Input - Scanner bilan\nimport java.util.Scanner;\n\nScanner scanner = new Scanner(System.in);\n\n// Matn olish\nSystem.out.print(\"Ismingizni kiriting: \");\nString name = scanner.nextLine();\n\n// Son olish\nSystem.out.print(\"Yoshingizni kiriting: \");\nint age = scanner.nextInt();\n\n// Output berish\nSystem.out.println(\"Salom, \" + name + \"!\");\nSystem.out.println(\"Siz \" + age + \" yoshdasiz.\");\n\n// Real misol: Calculator\nSystem.out.print(\"Birinchi sonni kiriting: \");\nint num1 = scanner.nextInt();\n\nSystem.out.print(\"Ikkinchi sonni kiriting: \");\nint num2 = scanner.nextInt();\n\nint sum = num1 + num2;\nSystem.out.println(\"Yig'indi: \" + sum);\n\nscanner.close();  // Scanner ni yopish"
+  },
+  {
+    id: 10,
+    category: "Programming Basics (Beginner)",
+    question: "Algorithm nima va qanday yoziladi?",
+    answer: "Algorithm - bu muammoni hal qilish uchun qadam-baqadam ko'rsatmalar ketma-ketligi. Retsept kabi: avval bu, keyin u, oxirida natija. Yaxshi algorithm: 1) Aniq - har bir qadam tushunarli. 2) Cheklangan - oxiri bor. 3) Effective - ishlaydigan yechim beradi. Algorithm yozish: muammoni tushunish → kiritma va chiqarma aniqlash → qadamlarni rejalashtirish → pseudocode yozish → kodga aylantirish → test qilish.",
+    example: "// Muammo: 2 ta sonning eng kattasini topish\n\n// Algorithm (pseudocode):\n// 1. Ikkita son ol: a va b\n// 2. Agar a > b bo'lsa\n//    - a ni chiqar\n// 3. Aks holda\n//    - b ni chiqar\n\n// Kod:\npublic static int findMax(int a, int b) {\n    if (a > b) {\n        return a;\n    } else {\n        return b;\n    }\n}\n\n// Real misol: Array dagi eng katta element\npublic static int findMaxInArray(int[] arr) {\n    // Algorithm:\n    // 1. Birinchi elementni max deb ol\n    int max = arr[0];\n    \n    // 2. Har bir elementni tekshir\n    for (int i = 1; i < arr.length; i++) {\n        // 3. Agar joriy element kattaroq bo'lsa\n        if (arr[i] > max) {\n            // 4. Uni max qilib belgilaymiz\n            max = arr[i];\n        }\n    }\n    \n    // 5. max ni qaytaramiz\n    return max;\n}\n\nint[] numbers = {15, 8, 23, 42, 16};\nint largest = findMaxInArray(numbers);  // 42"
+  },
+  {
+    id: 11,
+    category: "Programming Basics (Beginner)",
+    question: "Bug (xato) nima va qanday topiladi?",
+    answer: "Bug - bu dasturda xato yoki kutilmagan xatti-harakat. 3 xil bug: 1) Syntax error - grammatik xato, kod ishlamaydi. 2) Runtime error - dastur ishlayotganda xato (masalan, 0 ga bo'lish). 3) Logic error - dastur ishlaydi, lekin noto'g'ri natija beradi. Debugging - buglarni topish va tuzatish jarayoni. Usullari: print statement lar qo'yish, debugger tool ishlatish, kod qadamba-qadam ko'rib chiqish, test case lar yozish. Bug topish - detektiv bo'lish kabi!",
+    example: "// 1. Syntax Error - kod ishlamaydi\nint x = 5  // ; yo'q - syntax error!\nSystem.out.println(x)\n\n// 2. Runtime Error\nint a = 10;\nint b = 0;\nint result = a / b;  // ArithmeticException - 0 ga bo'lish!\n\n// 3. Logic Error - noto'g'ri natija\npublic static int calculateAverage(int a, int b) {\n    return a + b / 2;  // Xato! (a + b) / 2 bo'lishi kerak\n}\n// calculateAverage(10, 20) = 20 (noto'g'ri)\n// To'g'risi: (10 + 20) / 2 = 15\n\n// Debugging usuli: Print statements\npublic static int findSum(int[] arr) {\n    int sum = 0;\n    for (int i = 0; i < arr.length; i++) {\n        System.out.println(\"i = \" + i + \", arr[i] = \" + arr[i]);  // Debug\n        sum += arr[i];\n        System.out.println(\"sum = \" + sum);  // Debug\n    }\n    return sum;\n}\n\n// Tuzatish:\npublic static int calculateAverage(int a, int b) {\n    return (a + b) / 2;  // To'g'ri!\n}"
+  },
+  {
+    id: 12,
+    category: "Programming Basics (Beginner)",
+    question: "Comment (izoh) nima va nima uchun yoziladi?",
+    answer: "Comment - bu dasturchi uchun izoh, kompyuter uni o'qimaydi. Comment kod nima qilishini tushuntirish, murakkab joylarni izohlab berish uchun yoziladi. 2 xil comment: 1) Single-line comment (//) - bir qator izoh. 2) Multi-line comment (/* ... */) - ko'p qatorli izoh. Yaxshi comment kodni tushunarli qiladi, lekin ortiqcha comment kodning o'zini murakkablashtiradi. Kod 'nima qiladi' emas, 'nima uchun qiladi' ni tushuntirish kerak.",
+    example: "// Single-line comment\nint age = 25;  // Foydalanuvchi yoshi\n\n// Kod nima qilishini tushuntirish\n// Foydalanuvchi yoshini tekshirish\nif (age >= 18) {\n    System.out.println(\"Voyaga yetgan\");\n}\n\n/* Multi-line comment\n   Bu funksiya ikkita sonning\n   yig'indisini hisoblab,\n   natijani qaytaradi */\npublic static int add(int a, int b) {\n    return a + b;\n}\n\n// Yaxshi comment\npublic static double calculateDiscount(double price, int customerType) {\n    // VIP mijozlar 20% chegirma oladi\n    if (customerType == VIP) {\n        return price * 0.8;\n    }\n    return price;\n}\n\n// Yomon comment (ortiqcha)\nint x = 5;  // x ga 5 qiymatini berish - Bu ayon!\n\n// Code disable qilish uchun\n// System.out.println(\"Test\");  // Vaqtincha o'chirilgan\n\n// TODO comment - kelajakda qilish kerak bo'lgan ish\npublic void processPayment() {\n    // TODO: Kredit karta validatsiyasini qo'shish\n    // TODO: Email yuborish funksiyasini implement qilish\n}"
+  },
+  {
+    id: 13,
+    category: "Programming Basics (Beginner)",
+    question: "Pseudocode nima va qanday yoziladi?",
+    answer: "Pseudocode - bu algoritmni oddiy, tushunarli tilda yozish. Real kod emas, lekin kod mantiqini ko'rsatadi. Hech qanday programming language ga bog'liq emas. Pseudocode muammoni hal qilish logikasini rejalashtirish uchun ishlatiladi. Avval pseudocode, keyin real kod. Pseudocode yozish: oddiy so'zlar, if/else/while kabi strukturalar, indentation (joy qoldirish), aniq va qisqa.",
+    example: "// Muammo: Sonning toq yoki juftligini aniqlash\n\n// Pseudocode:\n/*\nBOSHLASH\n    son ni ol\n    AGAR son % 2 == 0 BO'LSA\n        \"Juft\" deb chiqar\n    AKS HOLDA\n        \"Toq\" deb chiqar\n    AGAR OXIRI\nTUGATISH\n*/\n\n// Real kod:\npublic static void checkEvenOdd(int number) {\n    if (number % 2 == 0) {\n        System.out.println(\"Juft\");\n    } else {\n        System.out.println(\"Toq\");\n    }\n}\n\n// Murakkab misol: Array dagi eng kichik element\n\n// Pseudocode:\n/*\nBOSHLASH\n    array ni ol\n    min = array ning birinchi elementi\n    \n    ARRAY ning har bir elementi UCHUN\n        AGAR element < min BO'LSA\n            min = element\n        AGAR OXIRI\n    UCHUN OXIRI\n    \n    min ni qaytarish\nTUGATISH\n*/\n\n// Real kod:\npublic static int findMin(int[] arr) {\n    int min = arr[0];\n    \n    for (int i = 1; i < arr.length; i++) {\n        if (arr[i] < min) {\n            min = arr[i];\n        }\n    }\n    \n    return min;\n}"
+  },
+  {
+    id: 14,
+    category: "Programming Basics (Beginner)",
+    question: "Problem solving (muammo hal qilish) ko'nikmasi qanday rivojlantiriladi?",
+    answer: "Problem solving - dasturlashning eng muhim ko'nikmasi. Bu faqat kod yozish emas, muammoni tushunish va yechim topish. Rivojlantirish usullari: 1) Muammoni to'liq tushunish - nima berilgan, nima topish kerak. 2) Kichik qismlarga bo'lish - katta muammoni kichik muammolarga. 3) Pattern lar topish - o'xshash muammolar yechilganmi. 4) Pseudocode yozish. 5) Ko'p mashq qilish - har xil muammolarni yechish. 6) Boshqalarning kodini o'rganish. Har kuni mashq qilish muhim!",
+    example: "// Muammo: Palindrome tekshirish (\"sos\", \"non\" kabi)\n\n// 1. Muammoni tushunish\n// Input: String\n// Output: true/false\n// Palindrome: chapdan o'ngga = o'ngdan chapga\n\n// 2. Kichik qismlarga bo'lish\n// - Stringni teskari o'girish\n// - Original bilan solishtirish\n\n// 3. Pseudocode\n/*\nBOSHLASH\n    string ni ol\n    reversed = string ni teskari o'girish\n    AGAR string == reversed BO'LSA\n        true qaytarish\n    AKS HOLDA\n        false qaytarish\nTUGATISH\n*/\n\n// 4. Kod yozish\npublic static boolean isPalindrome(String str) {\n    String reversed = \"\";\n    \n    // Teskari o'girish\n    for (int i = str.length() - 1; i >= 0; i--) {\n        reversed += str.charAt(i);\n    }\n    \n    // Solishtirish\n    return str.equals(reversed);\n}\n\n// Test\nSystem.out.println(isPalindrome(\"sos\"));    // true\nSystem.out.println(isPalindrome(\"olma\"));   // false\n\n// 5. Yaxshilash (optimizatsiya)\npublic static boolean isPalindromeFast(String str) {\n    int left = 0;\n    int right = str.length() - 1;\n    \n    while (left < right) {\n        if (str.charAt(left) != str.charAt(right)) {\n            return false;\n        }\n        left++;\n        right--;\n    }\n    \n    return true;\n}"
+  },
+  {
+    id: 15,
+    category: "Programming Basics (Beginner)",
+    question: "Computer memory (xotira) qanday ishlaydi?",
+    answer: "Computer memory - bu ma'lumotlarni saqlash joyi. 2 xil asosiy memory: 1) RAM (Random Access Memory) - tez, lekin vaqtinchalik. Dastur ishlaganda ishlatiladi, kompyuter o'chsa yo'qoladi. 2) Hard Disk/SSD - sekinroq, lekin doimiy. Fayllar bu yerda saqlanadi. RAM da: Stack (lokal o'zgaruvchilar) va Heap (obyektlar) mavjud. Memory cheklangan, shuning uchun efficient ishlatish kerak. Memory leak - ishlatilmagan memory ozod qilinmasa.",
+    example: "// Stack memory - lokal o'zgaruvchilar\npublic static void main(String[] args) {\n    int x = 5;        // Stack da\n    int y = 10;       // Stack da\n    int sum = x + y;  // Stack da\n    \n    // Method tugagach, x, y, sum stack dan o'chiriladi\n}\n\n// Heap memory - obyektlar\npublic static void main(String[] args) {\n    String name = new String(\"Ali\");  // \"Ali\" heap da\n    int[] arr = new int[100];         // Array heap da\n    \n    // name va arr referencelar stack da\n    // Lekin ular ko'rsatgan ma'lumot heap da\n}\n\n// Memory leak misoli (Java da GC bor, lekin...)\nclass MemoryLeakExample {\n    private static List<byte[]> list = new ArrayList<>();\n    \n    public static void causeLeak() {\n        while (true) {\n            byte[] data = new byte[1024 * 1024];  // 1MB\n            list.add(data);  // Hech qachon o'chirilmaydi!\n            // Oxir-oqibat OutOfMemoryError\n        }\n    }\n}\n\n// Yaxshi practice\npublic static void processData() {\n    List<String> data = new ArrayList<>();\n    // Data dan foydalanish\n    data.clear();  // Ishlatib bo'lgach tozalash\n    data = null;   // Reference ni yo'qotish\n    // Garbage Collector tozalaydi\n}"
+  },
+
+  // Java Fundamentals
+  {
+    id: 16,
     category: "Java Fundamentals",
     question: "JDK, JRE va JVM o'rtasidagi farq nima?",
     answer: "JDK (Java Development Kit) - bu Java dasturlarini ishlab chiqish uchun to'liq paket bo'lib, u kompilyator (javac), debugger va boshqa development tool larni o'z ichiga oladi. JRE (Java Runtime Environment) - bu Java dasturlarini ishga tushirish uchun muhit bo'lib, faqat runtime library va JVM ni o'z ichiga oladi. JVM (Java Virtual Machine) - bu Java bytecode ni ishga tushiradigan virtual mashina.",
@@ -742,5 +851,63 @@ export const questions: Question[] = [
     question: "Microservices architecture va Spring Cloud qanday ishlaydi?",
     answer: "Microservices - katta applicationni kichik, mustaqil servicelarga bo'lish. Har bir service o'z database ga ega. Spring Cloud - microservices pattern larini implement qilish uchun toolkit. Service Discovery (Eureka), API Gateway (Spring Cloud Gateway), Config Server (centralized configuration), Circuit Breaker (Resilience4j), Load Balancing (Spring Cloud LoadBalancer), Distributed Tracing (Sleuth, Zipkin). Inter-service communication - REST, gRPC, messaging. Containerization (Docker, Kubernetes).",
     example: "// 1. Service Registry (Eureka Server)\n@SpringBootApplication\n@EnableEurekaServer\npublic class EurekaServerApplication {\n    public static void main(String[] args) {\n        SpringApplication.run(EurekaServerApplication.class, args);\n    }\n}\n\n// application.yml\nserver:\n  port: 8761\neureka:\n  client:\n    register-with-eureka: false\n    fetch-registry: false\n\n// 2. Microservice (Eureka Client)\n@SpringBootApplication\n@EnableDiscoveryClient\npublic class UserServiceApplication { }\n\n// application.yml\nspring:\n  application:\n    name: user-service\neureka:\n  client:\n    service-url:\n      defaultZone: http://localhost:8761/eureka/\n\n// 3. API Gateway\n@SpringBootApplication\npublic class ApiGatewayApplication { }\n\n// application.yml\nspring:\n  cloud:\n    gateway:\n      routes:\n        - id: user-service\n          uri: lb://user-service\n          predicates:\n            - Path=/api/users/**\n          filters:\n            - StripPrefix=1\n        - id: order-service\n          uri: lb://order-service\n          predicates:\n            - Path=/api/orders/**\n\n// 4. Config Server\n@SpringBootApplication\n@EnableConfigServer\npublic class ConfigServerApplication { }\n\n// application.yml\nspring:\n  cloud:\n    config:\n      server:\n        git:\n          uri: https://github.com/your-repo/config-repo\n\n// 5. Circuit Breaker (Resilience4j)\n@Service\npublic class UserService {\n    \n    @Autowired\n    private RestTemplate restTemplate;\n    \n    @CircuitBreaker(name = \"orderService\", fallbackMethod = \"getOrdersFallback\")\n    public List<Order> getOrders(Long userId) {\n        return restTemplate.getForObject(\n            \"http://order-service/api/orders/user/\" + userId,\n            List.class\n        );\n    }\n    \n    public List<Order> getOrdersFallback(Long userId, Exception e) {\n        // Fallback logic\n        return Collections.emptyList();\n    }\n}\n\n// 6. Load Balanced RestTemplate\n@Configuration\npublic class RestTemplateConfig {\n    \n    @Bean\n    @LoadBalanced\n    public RestTemplate restTemplate() {\n        return new RestTemplate();\n    }\n}\n\n// 7. Distributed Tracing\n// application.yml\nspring:\n  zipkin:\n    base-url: http://localhost:9411\n  sleuth:\n    sampler:\n      probability: 1.0\n\n// Docker Compose\nversion: '3'\nservices:\n  eureka-server:\n    image: eureka-server:latest\n    ports:\n      - \"8761:8761\"\n  \n  user-service:\n    image: user-service:latest\n    depends_on:\n      - eureka-server\n    environment:\n      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
+  },
+
+  // How Java Works (Intermediate)
+  {
+    id: 98,
+    category: "How Java Works (Intermediate)",
+    question: "Java code qanday compile va execute qilinadi?",
+    answer: "Java kod 2 bosqichda ishlaydi: 1) Compilation (Kompilyatsiya) - javac kompilyatori .java faylni .class (bytecode) faylga aylantiradi. Bu bir martalik jarayon. Bytecode - platform-independent, hamma JVM da ishlaydi. 2) Execution (Bajarish) - JVM bytecode ni o'qiydi va mashina kodiga (native code) aylantiradi. Bu har safar dastur ishlaganda sodir bo'ladi. JIT (Just-In-Time) compiler tez-tez ishlatiladigan kodlarni optimize qiladi. Bu 'Write Once, Run Anywhere' (WORA) prinsipi.",
+    example: "// 1. Java source code (Hello.java)\npublic class Hello {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\");\n    }\n}\n\n// 2. Compilation\n// Terminal: javac Hello.java\n// Natija: Hello.class (bytecode) yaratiladi\n\n// 3. Execution\n// Terminal: java Hello\n// JVM bytecode ni o'qiydi va ishga tushiradi\n// Output: Hello World\n\n// Full process:\n// .java (source) → javac → .class (bytecode) → JVM → native code → CPU\n\n// Bytecode ko'rinishi (javap -c Hello):\npublic static void main(java.lang.String[]);\n  Code:\n    0: getstatic     #2  // Field java/lang/System.out\n    3: ldc           #3  // String Hello World\n    5: invokevirtual #4  // Method println\n    8: return\n\n// Bir marta compile, istalgan yerda ishla:\n// Windows da compile: javac Hello.java\n// Linux da ishlatish: java Hello  // Ishlaydi!\n// Mac da ishlatish: java Hello    // Ishlaydi!"
+  },
+  {
+    id: 99,
+    category: "How Java Works (Intermediate)",
+    question: "JIT (Just-In-Time) Compiler nima va qanday ishlaydi?",
+    answer: "JIT Compiler - bu bytecode ni runtime da native machine code ga aylantruvchi komponent. Interpretation dan tezroq. JVM avval bytecode ni interpret qiladi (sekin), keyin hot spots (tez-tez ishlatiladigan kod) ni aniqlaydi va ularni native code ga compile qiladi (tez). JIT optimizatsiyalar: inline expansion, dead code elimination, loop unrolling. C1 (Client) compiler - tez compile, kam optimizatsiya. C2 (Server) compiler - sekin compile, ko'p optimizatsiya. Tiered compilation - ikkalasini birlashtiradi.",
+    example: "// Method execution lifecycle\npublic int calculateSum(int n) {\n    int sum = 0;\n    for (int i = 1; i <= n; i++) {\n        sum += i;\n    }\n    return sum;\n}\n\n// 1st call: Interpreted (sekin)\ncalculateSum(100);  // ~10ms\n\n// 2nd-10th call: Interpreted\ncalculateSum(100);  // ~10ms har safar\n\n// JVM hot spot aniqlaydi: Bu method ko'p chaqirilmoqda!\n\n// 11th call onwards: JIT compiled (tez)\ncalculateSum(100);  // ~1ms - 10x tezroq!\n\n// JVM flags:\n// -XX:+PrintCompilation  // JIT compilation ni ko'rish\n// -XX:CompileThreshold=10000  // Necha marta chaqirilganda compile qilish\n\n// Tiered Compilation (default Java 8+)\n// Level 0: Interpreter\n// Level 1: C1 with simple optimization\n// Level 2: C1 with full optimization\n// Level 3: C2 compilation"
+  },
+  {
+    id: 100,
+    category: "How Java Works (Intermediate)",
+    question: "Bytecode nima va nima uchun Java uni ishlatadi?",
+    answer: "Bytecode - Java source code ning intermediate (oraliq) ko'rinishi. .class faylda saqlanadi. Platform-independent - Windows, Linux, Mac da bir xil. Human-readable emas, JVM uchun mo'ljallangan. Instructions set: bipush, aload, invokevirtual va boshqalar. Nima uchun bytecode: 1) Platform independence - bir marta compile, hamma yerda ishla. 2) Security - bytecode verifier xavfsizlikni tekshiradi. 3) Optimization - JIT runtime da optimize qiladi. 4) Smaller size - bytecode source code dan kichikroq. javap tool bilan bytecode ni ko'rish mumkin.",
+    example: "// Java source code\npublic class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}\n\n// Compile: javac Calculator.java\n// Result: Calculator.class (bytecode)\n\n// View bytecode: javap -c Calculator\npublic int add(int, int);\n  Code:\n    0: iload_1        // Load a from local variable 1\n    1: iload_2        // Load b from local variable 2\n    2: iadd           // Add them\n    3: ireturn        // Return result\n\n// Bytecode instructions:\n// iload: load int from local variable\n// iadd: integer add\n// ireturn: return int\n// invokevirtual: call instance method\n// getstatic: get static field"
+  },
+  {
+    id: 101,
+    category: "How Java Works (Intermediate)",
+    question: "ClassLoader va Class Loading jarayoni qanday ishlaydi?",
+    answer: "ClassLoader - JVM ga class larni yuklash uchun javobgar komponent. 3 bosqich: 1) Loading - .class faylni topish va o'qish. 2) Linking - Verification (bytecode to'g'rimi?), Preparation (static fieldlar uchun joy), Resolution (symbolic reference → direct reference). 3) Initialization - static initializer va static fieldlar. ClassLoader hierarchy: Bootstrap (JDK core classes), Platform/Extension (extension classes), Application (classpath). Delegation model: parent ga avval so'raydi. Lazy loading: class faqat kerak bo'lganda yuklanadi. Custom ClassLoader yaratish mumkin.",
+    example: "// ClassLoader hierarchy\nClassLoader appLoader = MyClass.class.getClassLoader();\nSystem.out.println(\"App: \" + appLoader);\n\nClassLoader platformLoader = appLoader.getParent();\nSystem.out.println(\"Platform: \" + platformLoader);\n\nClassLoader bootstrapLoader = platformLoader.getParent();\nSystem.out.println(\"Bootstrap: \" + bootstrapLoader);  // null\n\n// Class initialization order\nclass Parent {\n    static { System.out.println(\"1. Parent static\"); }\n    { System.out.println(\"3. Parent instance\"); }\n    Parent() { System.out.println(\"4. Parent constructor\"); }\n}\n\nclass Child extends Parent {\n    static { System.out.println(\"2. Child static\"); }\n    { System.out.println(\"5. Child instance\"); }\n    Child() { System.out.println(\"6. Child constructor\"); }\n}\n\nnew Child();"
+  },
+  {
+    id: 102,
+    category: "How Java Works (Intermediate)",
+    question: "CLASSPATH va Package system qanday ishlaydi?",
+    answer: "CLASSPATH - JVM va Java compiler class larni qayerdan topishini bildiradi. Directory yoki JAR fayllar ro'yxati. Package - class larni mantiqiy guruhlash mexanizmi. Namespace saqlab qoladi - bir xil nomli classlar turli package larda bo'lishi mumkin. Package hierarchiya directory structure ga mos kelishi kerak. CLASSPATH sozlash: environment variable, -cp flag, manifest file (JAR). Fully Qualified Name (FQN): package.name.ClassName. import statement FQN ni qisqartiradi.",
+    example: "// Package declaration\npackage com.example.myapp.models;\n\npublic class User {\n    private String name;\n}\n\n// Directory structure MUST match:\n// com/example/myapp/models/User.java\n\n// Using package\nimport com.example.myapp.models.User;\n\npublic class Main {\n    public static void main(String[] args) {\n        User user = new User();  // With import\n        \n        // Without import (FQN)\n        com.example.myapp.models.User user2 = \n            new com.example.myapp.models.User();\n    }\n}\n\n// CLASSPATH\n// Unix: export CLASSPATH=/path/to/classes:/path/to/lib.jar:.\n// Windows: set CLASSPATH=C:\\path\\to\\classes;lib.jar;.\n// Command: javac -cp \".:/path/to/lib.jar\" MyClass.java"
+  },
+  {
+    id: 103,
+    category: "How Java Works (Intermediate)",
+    question: "JAR (Java Archive) file nima va qanday yaratiladi?",
+    answer: "JAR file - Java class files, metadata va resurslarni bitta arxiv faylga jamlash. ZIP format asosida. Foydalanish: 1) Distribution - dasturni tarqatish oson. 2) Classpath - bitta JAR faylni classpath ga qo'shish. 3) Executable - java -jar orqali ishga tushirish. 4) Library - boshqa loyihalarda qayta ishlatish. JAR tarkibi: .class fayllar, META-INF/MANIFEST.MF, resurslar (images, config). jar command bilan yaratiladi. Maven/Gradle avtomatik JAR yaratadi. Executable JAR Main-Class ko'rsatishi kerak.",
+    example: "// JAR yaratish\n// 1. Compile\njavac -d bin src/com/example/*.java\n\n// 2. Create JAR\njar cvf myapp.jar -C bin .\n\n// JAR strukturasi:\n// myapp.jar\n//   META-INF/MANIFEST.MF\n//   com/example/Main.class\n//   resources/config.properties\n\n// MANIFEST.MF\n// Main-Class: com.example.Main\n// Class-Path: lib/mysql.jar lib/gson.jar\n\n// Executable JAR\njar cvfe myapp.jar com.example.Main -C bin .\n\n// Run\njava -jar myapp.jar\n\n// View contents\njar tf myapp.jar"
+  },
+  {
+    id: 104,
+    category: "How Java Works (Intermediate)",
+    question: "Java Platform Independence qanday amalga oshiriladi?",
+    answer: "Java 'Write Once, Run Anywhere' (WORA) prinsipi bilan ishlaydi. Platform independence: 1) Bytecode - platform-neutral intermediate representation. 2) JVM - har bir platform uchun alohida JVM, lekin bytecode bir xil. 3) Standard Library - platform-independent API (java.io, java.nio). 4) Primitive types - har platformda bir xil size (int har doim 32-bit). C/C++ dan farqi: C/C++ to'g'ridan-to'g'ri native code ga compile qilinadi va har platformda qayta compile kerak. Java bir marta compile, istalgan JVM da ishla.",
+    example: "// Java Platform Independence\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\");\n    }\n}\n\n// Compile once:\njavac HelloWorld.java  // → HelloWorld.class\n\n// Run anywhere:\n// Windows: java HelloWorld  ✓\n// Linux:   java HelloWorld  ✓\n// Mac:     java HelloWorld  ✓\n\n// JVM handles platform differences\nFile file = new File(\"data/file.txt\");\n// Windows: data\\file.txt\n// Unix:    data/file.txt\n// JVM automatically handles this!\n\n// Primitive types always same size\nint x = 100;  // Always 32-bit\n// C/C++: int size varies (16 or 32-bit)\n\nlong y = 1000L;  // Always 64-bit\n// C/C++: long size varies by platform"
+  },
+  {
+    id: 105,
+    category: "How Java Works (Intermediate)",
+    question: "Java Program Execution Flow to'liq jarayoni qanday?",
+    answer: "Java dasturni ishga tushirish to'liq jarayoni: 1) Source Code (.java) - dasturchi yozadi. 2) Compilation (javac) - source code → bytecode (.class). 3) Class Loading - ClassLoader bytecode ni memory ga yuklaydi. 4) Bytecode Verification - security tekshiruvi. 5) JIT Compilation - hot code → native code. 6) Execution - CPU dasturni bajaradi. 7) Garbage Collection - memory tozalash. Har bir bosqichda JVM xavfsizlik, optimizatsiya va platform independence ni ta'minlaydi. Main method dan boshlanadi va return qilguncha yoki exception yuzaga kelguncha davom etadi.",
+    example: "// Complete Java Execution Flow\npublic class HelloWorld {\n    static {\n        System.out.println(\"1. Static initializer\");\n    }\n    \n    public HelloWorld() {\n        System.out.println(\"3. Constructor\");\n    }\n    \n    public static void main(String[] args) {\n        System.out.println(\"2. Main method start\");\n        HelloWorld obj = new HelloWorld();\n        obj.greet();\n        System.out.println(\"5. Main method end\");\n    }\n    \n    public void greet() {\n        System.out.println(\"4. Instance method\");\n    }\n}\n\n// Execution steps:\n// 1. JVM starts\n// 2. ClassLoader loads HelloWorld.class\n// 3. Bytecode verification\n// 4. Static initializers execute\n// 5. main() method called\n// 6. Object creation\n// 7. Method calls\n// 8. GC runs (background)\n// 9. JVM shutdown"
   }
 ];
